@@ -1,8 +1,3 @@
-export interface SMS {
-    body: string
-    phone: string
-    timeStamp: number
-}
 
 export interface ParsedSMS {
     phone: string
