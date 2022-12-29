@@ -9,11 +9,14 @@
     "start": "func start",
     "test": "echo \"No tests yet...\""
   },
-  "dependencies": {},
+  "dependencies": {
+    "@types/twilio": "^3.19.3",
+    "twilio": "^3.84.0"
+  },
   "devDependencies": {
     "@azure/functions": "^3.0.0",
-    "azure-functions-core-tools": "^4.x",
     "@types/node": "16.x",
+    "azure-functions-core-tools": "^4.x",
     "typescript": "^4.0.0"
   }
 }

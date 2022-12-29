@@ -1,16 +1,14 @@
 import { AzureFunction, Context, HttpRequest } from "@azure/functions"
+import {Twilio, twiml} from 'twilio'
+import { TWILIO_SID, TWILIO_TOKEN, TWILIO_NUMBER} from "./utils/constants";
+const {MessagingResponse} = twiml
 
 const httpTrigger: AzureFunction = async function (context: Context, req: HttpRequest): Promise<void> {
-    context.log('HTTP trigger function processed a request.');
-    const name = (req.query.name || (req.body && req.body.name));
-    const responseMessage = name
-        ? "Hello, " + name + ". This HTTP triggered function executed successfully."
-        : "This HTTP triggered function executed successfully. Pass a name in the query string or in the request body for a personalized response.";
-
-    context.res = {
-        // status: 200, /* Defaults to 200 */
-        body: responseMessage
-    };
+    const response = new MessagingResponse()
+    context.log('HTTP trigger function processed a request.')
+    response.message('The Robots are coming! Head for the hills!');
+    context.res.set('Content-Type','application/xml')
+    context.res.send(response.toString());
 
 };
 
