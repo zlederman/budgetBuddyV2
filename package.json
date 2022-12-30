@@ -10,12 +10,15 @@
     "test": "echo \"No tests yet...\""
   },
   "dependencies": {
+    "@types/twilio": "^3.19.3",
+    "twilio": "^3.84.0"
     "pegjs": "^0.10.0"
   },
   "devDependencies": {
     "@azure/functions": "^3.0.0",
     "@types/node": "16.x",
     "azure-functions-core-tools": "^4.x",
-    "typescript": "^4.0.0"
+    "typescript": "^4.0.0",
+    "dotenv": "^16.0.3"
   }
 }
